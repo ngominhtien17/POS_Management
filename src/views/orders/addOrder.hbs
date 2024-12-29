@@ -1,0 +1,202 @@
+<div class="container-fluid add-form-list">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="header-title">
+                        <h4 class="card-title">Tạo hóa đơn</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form id="transactionForm" action="" method="POST" data-toggle="validator">
+                        <fieldset>
+                            <legend>Thông tin khách hàng</legend>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Ngày *</label>
+                                        <input type="date" class="form-control" id="date" name="date" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Tên khách hàng *</label>
+                                        <input type="text" class="form-control" id="customerName" name="customerName" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Số điện thoại *</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Địa chỉ *</label>
+                                        <input type="text" class="form-control" id="address" name="address" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Thông tin sản phẩm</legend>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="search-product">Tìm sản phẩm *</label>
+                                        <input id="search-product" type="search" class="form-control" placeholder="Tìm sản phẩm theo tên hoặc barcode...">
+                                    </div>
+                                    <button type="button" id="addProduct" class="btn btn-primary">Thêm</button>
+                                </div>
+                            </div>
+                            <div class="table-responsive rounded mb-3">
+                                <table id="productTable" class="table mb-0">
+                                    <thead class="bg-white text-uppercase">
+                                        <tr>
+                                            <th>Sản phẩm</th>
+                                            <th>Mã sản phẩm</th>
+                                            <th>Giá</th>
+                                            <th>Số lượng</th>
+                                            <th>Thao tác</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="ligth-body">
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="../assets/images/table/product/01.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image">
+                                                        <div>
+                                                            Organic Cream
+                                                            <p class="mb-0"><small>This is test Product</small></p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>CREM01</td>
+                                                <td>$25.00</td>
+                                                <td>10.0</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <button type="button" class="btn btn-danger">Xóa</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="../assets/images/table/product/01.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image">
+                                                        <div>
+                                                            Organic Cream
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>CREM01</td>
+                                                <td>$25.00</td>
+                                                <td>10.0</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <button type="button" class="btn btn-danger">Xóa</button>
+                                                    </div>
+                                                </td>   
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Thanh toán</legend>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Tổng tiền đơn hàng:</label>
+                                        <input type="text" id="totalAmount" class="form-control" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Trạng thái thanh toán:</label>
+                                        <select name="paymentStatus" class="form-control" required>
+                                            <option value="unpaid">Chưa thanh toán</option>
+                                            <option value="paid">Đã thanh toán</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Tổng tiền đã nhận:</label>
+                                        <input type="number" id="receivedAmount" name="receivedAmount" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Tiền thừa:</label>
+                                        <input type="text" id="changeAmount" class="form-control" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary mr-2">Tạo hóa đơn</button>
+                                <button type="reset" class="btn btn-danger">Hủy</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('phone').addEventListener('blur', async function() {
+        const phone = this.value;
+        if (phone) {
+            try {
+                const response = await fetch(`/customer/checkPhoneNumber/${phone}`);
+                const data = await response.json();
+                if (data.exists) {
+                    // Hiển thị thông tin khách hàng lên form
+                    document.getElementById('customerName').value = data.customer.name;
+                    document.getElementById('address').value = data.customer.address;
+                    // Gửi dữ liệu khách hàng lên server
+                    await sendCustomerData(data.customer);
+                } else {
+                    // Xóa thông tin cũ nếu có
+                    document.getElementById('customerName').value = '';
+                    document.getElementById('address').value = '';
+                }
+            } catch (error) {
+                console.error('Lỗi khi kiểm tra số điện thoại:', error);
+            }
+        }
+    });
+
+    async function sendCustomerData(customer) {
+        try {
+            const response = await fetch('/customer/updateOrCreateCustomer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(customer),
+            });
+            const result = await response.json();
+            console.log('Kết quả gửi dữ liệu khách hàng:', result);
+        } catch (error) {
+            console.error('Lỗi khi gửi dữ liệu khách hàng:', error);
+        }
+    }
+
+    // Thêm các chức năng khác cho form giao dịch
+    document.getElementById('receivedAmount').addEventListener('input', calculateChange);
+
+    function calculateChange() {
+        const totalAmount = parseFloat(document.getElementById('totalAmount').value) || 0;
+        const receivedAmount = parseFloat(document.getElementById('receivedAmount').value) || 0;
+        const changeAmount = receivedAmount - totalAmount;
+        document.getElementById('changeAmount').value = changeAmount.toFixed(2);
+    }
+</script>
